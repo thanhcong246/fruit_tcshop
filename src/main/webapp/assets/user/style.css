@@ -1,0 +1,10 @@
+li.hover_black a {
+	color: #323232 !important;
+	/* Màu đen khi không được chọn */
+}
+
+/* Màu khi di chuột vào thẻ <a> */
+li.hover_black a:hover {
+	color: rgb(0, 0, 0) !important;
+	/* Màu trắng khi di chuột vào */
+}
