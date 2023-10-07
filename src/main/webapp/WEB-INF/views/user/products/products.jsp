@@ -47,7 +47,8 @@
 					<div class="col-lg-4 col-md-6 text-center">
 						<div class="single-product-item">
 							<div class="product-image">
-								<a href="single-product.html"><img
+								<a
+									href='<c:url value="/san-pham/chi-tiet-san-pham/${item.id }" />'><img
 									src='<c:url value="/assets/user/assets/img/products/${item.img }" />'
 									alt=""></a>
 							</div>
@@ -81,7 +82,8 @@
 												value="${loop.index}" /></a></li>
 								</c:if>
 								<c:if test="${loop.index != paginateInfo.currentPage}">
-									<li><a href="<c:url value='/san-pham/trang/${loop.index}' />"><c:out
+									<li><a
+										href="<c:url value='/san-pham/trang/${loop.index}' />"><c:out
 												value="${loop.index}" /></a></li>
 								</c:if>
 							</c:forEach>

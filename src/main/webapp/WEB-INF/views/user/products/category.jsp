@@ -45,7 +45,8 @@
 					<div class="col-lg-4 col-md-6 text-center">
 						<div class="single-product-item">
 							<div class="product-image">
-								<a href="single-product.html"><img
+								<a
+									href="<c:url value="/san-pham/chi-tiet-san-pham/${item.id }" />"><img
 									src='<c:url value="/assets/user/assets/img/products/${item.img }" />'
 									alt=""></a>
 							</div>
