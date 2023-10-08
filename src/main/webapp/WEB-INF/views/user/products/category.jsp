@@ -10,7 +10,6 @@
 			<div class="row">
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="breadcrumb-text">
-						<p>Fresh and Organic</p>
 						<h1>Sản phẩm</h1>
 					</div>
 				</div>
@@ -57,8 +56,15 @@
 									value="${item.price }" />
 								₫
 							</p>
-							<a href="cart.html" class="cart-btn"><i
-								class="fas fa-shopping-cart"></i> Thêm vào giỏ hàng</a>
+							<c:if test="${item.total_quality == 0 }">
+								<a href="#" class="cart-btn"><i class="fas fa-shopping-cart"></i>
+									Hết hàng</a>
+							</c:if>
+							<c:if test="${item.total_quality > 0 }">
+								<a href="<c:url value="/AddCart/${item.id }" />"
+									class="cart-btn"><i class="fas fa-shopping-cart"></i> Thêm
+									vào giỏ hàng</a>
+							</c:if>
 						</div>
 					</div>
 				</c:forEach>

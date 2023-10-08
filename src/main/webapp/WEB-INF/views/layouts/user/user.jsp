@@ -60,6 +60,10 @@
 
 	<%@include file="/WEB-INF/views/layouts/user/footer.jsp"%>
 
+
+	<!--  -->
+	<decorator:getProperty property="page.script"></decorator:getProperty>
+
 	<!-- script -->
 	<script type="text/javascript">
 		// Xử lý active trang chủ

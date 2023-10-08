@@ -56,18 +56,52 @@ public class ProductDao extends BaseDao {
 		return listProducts;
 	}
 
-	private String SqlProductById(long id) {
-		return "SELECT * FROM products WHERE id = " + id + " LIMIT 1";
+	private String SqlProductById(long id) {// xử lý detail sp
+		return "SELECT * FROM products WHERE id = " + id + " ";
 	}
 
-	public List<Product> GetProductById(long id) { // xử lý chi tiết sản phẩm
+	public List<Product> GetProductById(long id) { // xử lý detail sp
 		String sql = SqlProductById(id);
 		List<Product> listProducts = _jdbcTemplate.query(sql, new ProductMapper());
 		return listProducts;
 	}
 
-	public Product FindProductById(long id) { // xử lý sản phẩm liên quan theo id sản phẩm trong detail sp
-		String sql = SqlProductById(id);
+	private String SqlProductByIdRelate(long id) {// xử lý sản phẩm liên quan theo id sản phẩm trong detail sp
+		return "SELECT * FROM products WHERE id_category = " + id + " ORDER BY RAND() LIMIT 3";
+	}
+
+	public List<Product> GetProductByIdRelate(long id) { // xử lý sản phẩm liên quan theo id sản phẩm trong detail sp
+		String sql = SqlProductByIdRelate(id);
+		List<Product> listProducts = _jdbcTemplate.query(sql, new ProductMapper());
+		return listProducts;
+	}
+
+	private String SqlGetAllProductNew() { // sql lấy tất cả sản phẩm nổi bật
+		return "SELECT * FROM `products` WHERE new_product = true ORDER BY RAND() LIMIT 3";
+	}
+
+	public List<Product> GetDataNewProducts() { // xử lý sản phẩm mới
+		String sql = SqlGetAllProductNew();
+		List<Product> listNewProducts = _jdbcTemplate.query(sql, new ProductMapper());
+		return listNewProducts;
+	}
+
+	private String SqlGetAllProductHighlight() { // sql lấy tất cả sản phẩm nổi bật
+		return "SELECT * FROM `products` WHERE highlight = true ORDER BY RAND() LIMIT 3";
+	}
+
+	public List<Product> GetDataHightlightProducts() { // xử lý sản phẩm nổi bật
+		String sql = SqlGetAllProductHighlight();
+		List<Product> listHightlightProducts = _jdbcTemplate.query(sql, new ProductMapper());
+		return listHightlightProducts;
+	}
+	
+	private String SqlProductByIdCart(long id) {// xử lý cart sp
+		return "SELECT * FROM products WHERE id = " + id + " LIMIT 1";
+	}
+
+	public Product FindProductById(long id) { // lấy sản phẩm theo id sản phẩm xử lý bên giỏ hàng
+		String sql = SqlProductByIdCart(id);
 		Product product = _jdbcTemplate.queryForObject(sql, new ProductMapper());
 		return product;
 	}

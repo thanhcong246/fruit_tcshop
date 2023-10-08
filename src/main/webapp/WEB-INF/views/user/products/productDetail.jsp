@@ -41,10 +41,17 @@
 						</p>
 						<p>${productDetail.details }</p>
 						<div>
-							<a href="cart.html" class="cart-btn"><i
-								class="fas fa-shopping-cart"></i> Thêm vào giỏ hàng</a>
+							<c:if test="${productDetail.total_quality == 0 }">
+								<a href="#" class="cart-btn"><i class="fas fa-shopping-cart"></i>
+									Hết hàng</a>
+							</c:if>
+							<c:if test="${item.total_quality > 0 }">
+								<a href="<c:url value="/AddCart/${productDetail.id }" />"
+									class="cart-btn"><i class="fas fa-shopping-cart"></i> Thêm
+									vào giỏ hàng</a>
+							</c:if>
 							<p style="margin-top: 10px !important;">
-								<strong>Categories: </strong>Fruits, Organic
+								<strong>Loại: </strong>Fruits, Organic
 							</p>
 						</div>
 						<h4>Chia sẻ:</h4>
@@ -75,12 +82,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<c:set var="countList" value="${productByIdCategory.size() }" />
-				<c:if test="${productByIdCategory.size() > 6 }">
-					<c:set var="countList" value="6" />
-				</c:if>
-				<c:forEach var="item" items="${productByIdCategory }" begin="1"
-					end="${countList }" varStatus="loop">
+				<c:forEach var="item" items="${productByIdCategory }">
 					<div class="col-lg-4 col-md-6 text-center">
 						<div class="single-product-item">
 							<div class="product-image">
@@ -91,12 +93,12 @@
 							</div>
 							<h3>${item.name }</h3>
 							<p class="product-price">
-								<span>${productDetail.title }</span>
+								<span>${item.title }</span>
 								<fmt:formatNumber type="number" groupingUsed="true"
 									value="${item.price }" />
 								₫
 							</p>
-							<a href="cart.html" class="cart-btn"><i
+							<a href="<c:url value="/AddCart/${item.id }" />" class="cart-btn"><i
 								class="fas fa-shopping-cart"></i> Thêm vào giỏ hàng</a>
 						</div>
 					</div>

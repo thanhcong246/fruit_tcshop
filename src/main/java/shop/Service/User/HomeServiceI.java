@@ -12,8 +12,15 @@ import shop.Entity.Slide;
 @Service
 public interface HomeServiceI {
 	public List<Menu> GetDataMenu();
+
 	public List<Slide> GetDataSlide();
+
 	public List<Categorys> GetDataCategorys();
+
 	public List<Product> GetProductSearch(String name);
+
+	public List<Product> GetDataNewProducts();
+
+	public List<Product> GetDataHightlightProducts();
 
 }

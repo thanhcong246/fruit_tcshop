@@ -60,8 +60,8 @@
 							</c:if>
 							<li>
 								<div class="header-icons">
-									<a class="shopping-cart" href="cart.html"><i
-										class="fas fa-shopping-cart mr-1"></i> (1)</a> <a
+									<a class="shopping-cart" href='<c:url value="/gio-hang"/>'><i
+										class="fas fa-shopping-cart mr-1"></i> ${TotalQuantyCart }</a> <a
 										class="mobile-hide search-bar-icon" href="#"><i
 										class="fas fa-search"></i></a>
 								</div>

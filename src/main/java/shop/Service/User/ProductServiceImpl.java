@@ -22,7 +22,7 @@ public class ProductServiceImpl implements ProductServiceI {
 
 	@Override
 	public List<Product> GetProductByIdCategory(int id) {
-		return productDao.GetAllProductsByID(id);
+		return productDao.GetProductByIdRelate(id);
 	}
 
 }

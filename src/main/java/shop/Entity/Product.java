@@ -10,6 +10,7 @@ public class Product {
 	private double price;
 	private int sale;
 	private String title;
+	private int total_quality;
 	private boolean highlight;
 	private boolean newProduct;
 	private String details;
@@ -75,6 +76,14 @@ public class Product {
 		this.title = title;
 	}
 
+	public int getTotal_quality() {
+		return total_quality;
+	}
+
+	public void setTotal_quality(int total_quality) {
+		this.total_quality = total_quality;
+	}
+
 	public boolean isHighlight() {
 		return highlight;
 	}
@@ -114,5 +123,7 @@ public class Product {
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
+
+	
 
 }

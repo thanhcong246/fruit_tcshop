@@ -15,6 +15,8 @@ public class HomeController extends BaseController {
 	@RequestMapping(value = { "/" }, method = RequestMethod.GET)
 	public ModelAndView Index() {
 		_mvIndex.addObject("slides", _homeService.GetDataSlide());
+		_mvIndex.addObject("new_products", _homeService.GetDataNewProducts());
+		_mvIndex.addObject("hightlight_products", _homeService.GetDataHightlightProducts());
 		_mvIndex.setViewName("user/index");
 		return _mvIndex;
 	}
@@ -27,4 +29,3 @@ public class HomeController extends BaseController {
 		return _mvIndex;
 	}
 }
-
