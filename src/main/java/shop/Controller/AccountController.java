@@ -110,7 +110,7 @@ public class AccountController extends BaseController {
 			Users loggedInUser = accountService.CheckAccount(user);
 			if (loggedInUser != null) {
 				if (loggedInUser.getActive() == 1) {
-					mv.setViewName("redirect:/admin/"); // Nếu active = 1, chuyển hướng đến trang admin
+					mv.setViewName("redirect:/"); // Nếu active = 1, chuyển hướng đến trang admin
 				} else {
 					mv.setViewName("redirect:/"); // Nếu active = 0, chuyển hướng đến trang chính
 				}

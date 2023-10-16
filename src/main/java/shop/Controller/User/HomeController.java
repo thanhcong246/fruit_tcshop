@@ -14,6 +14,8 @@ import shop.Entity.Product;
 public class HomeController extends BaseController {
 	@RequestMapping(value = { "/" }, method = RequestMethod.GET)
 	public ModelAndView Index() {
+		_mvIndex.addObject("menus", _homeService.GetDataMenu());
+		_mvIndex.addObject("categorys", _homeService.GetDataCategorys());
 		_mvIndex.addObject("slides", _homeService.GetDataSlide());
 		_mvIndex.addObject("new_products", _homeService.GetDataNewProducts());
 		_mvIndex.addObject("hightlight_products", _homeService.GetDataHightlightProducts());
@@ -26,6 +28,8 @@ public class HomeController extends BaseController {
 		List<Product> products = _homeService.GetProductSearch(keyword); // Tìm kiếm sản phẩm
 		_mvIndex.addObject("productsPaginate", products);
 		_mvIndex.setViewName("user/products/products");
+		_mvIndex.addObject("menus", _homeService.GetDataMenu());
+		_mvIndex.addObject("categorys", _homeService.GetDataCategorys());
 		return _mvIndex;
 	}
 }

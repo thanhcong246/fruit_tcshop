@@ -17,6 +17,8 @@ public class ProductController extends BaseController {
 	// phẩm
 	@RequestMapping(value = { "/san-pham/chi-tiet-san-pham/{id}" })
 	public ModelAndView IndexProductDetail(@PathVariable long id) {
+		_mvIndex.addObject("menus", _homeService.GetDataMenu());
+		_mvIndex.addObject("categorys", _homeService.GetDataCategorys());
 		_mvIndex.setViewName("user/products/productDetail");
 		_mvIndex.addObject("productDetail", _productService.GetProductById(id));
 		int idCategory = _productService.GetProductById(id).getCategoryId();

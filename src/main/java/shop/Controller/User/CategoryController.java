@@ -28,6 +28,8 @@ public class CategoryController extends BaseController {
 		_mvIndex.addObject("paginateInfo", paginateInfo);
 		_mvIndex.addObject("productsPaginate",
 				categoryService.GetDataProductsPaginate(paginateInfo.getStart(), totalProductsPage));
+		_mvIndex.addObject("menus", _homeService.GetDataMenu());
+		_mvIndex.addObject("categorys", _homeService.GetDataCategorys());
 		return _mvIndex;
 	}
 
@@ -40,6 +42,8 @@ public class CategoryController extends BaseController {
 		_mvIndex.addObject("paginateInfo", paginateInfo);
 		_mvIndex.addObject("productsPaginate",
 				categoryService.GetDataProductsPaginate(paginateInfo.getStart(), totalProductsPage));
+		_mvIndex.addObject("menus", _homeService.GetDataMenu());
+		_mvIndex.addObject("categorys", _homeService.GetDataCategorys());
 		return _mvIndex;
 	}
 
@@ -52,6 +56,8 @@ public class CategoryController extends BaseController {
 		_mvIndex.addObject("paginateInfo", paginateInfo);
 		_mvIndex.addObject("productsPaginate", categoryService.GetDataProductsPaginate(Integer.parseInt(id),
 				paginateInfo.getStart(), totalProductsPage));
+		_mvIndex.addObject("menus", _homeService.GetDataMenu());
+		_mvIndex.addObject("categorys", _homeService.GetDataCategorys());
 		return _mvIndex;
 	}
 
@@ -65,6 +71,8 @@ public class CategoryController extends BaseController {
 		_mvIndex.addObject("paginateInfo", paginateInfo);
 		_mvIndex.addObject("productsPaginate", categoryService.GetDataProductsPaginate(Integer.parseInt(id),
 				paginateInfo.getStart(), totalProductsPage));
+		_mvIndex.addObject("menus", _homeService.GetDataMenu());
+		_mvIndex.addObject("categorys", _homeService.GetDataCategorys());
 		return _mvIndex;
 	}
 }

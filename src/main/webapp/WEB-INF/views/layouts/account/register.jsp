@@ -18,6 +18,9 @@
 		</div>
 		<form:errors style="color: red; margin-left:30px; font-size:13px"
 			path="user" />
+		<c:if test="${not empty status }">
+			<span style="color: red; margin-left: 30px; font-size: 13px">${status }</span>
+		</c:if>
 
 		<div class="wrap-input100 ">
 			<form:input type="password" class="input100"

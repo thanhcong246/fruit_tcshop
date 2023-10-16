@@ -11,8 +11,11 @@
 <meta name="description" content="Trang quản trị website bán hoa quả">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="apple-touch-icon" href="https://i.imgur.com/QRAUqs9.png">
-<link rel="shortcut icon" href="https://i.imgur.com/QRAUqs9.png">
+<link rel="shortcut icon" type="image/png"
+	href="<c:url value="/assets/user/assets/img/favicon-shop.png"/>">
+
+<link rel="stylesheet"
+	href='<c:url value="/assets/admin/stylecss.css" />'>
 
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
@@ -45,6 +48,7 @@
 <link
 	href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css"
 	rel="stylesheet" />
+
 
 <style>
 #weatherWidget .currentDesc {
@@ -109,6 +113,9 @@
 	</div>
 	<!-- /#right-panel -->
 
+	<!--  -->
+	<decorator:getProperty property="page.script"></decorator:getProperty>
+
 	<!-- Scripts -->
 	<script
 		src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
@@ -150,6 +157,8 @@
 
 	<script
 		src="<c:url value="/assets/admin/assets/js/init/fullcalendar-init.js" />"></script>
+
+	<script src="<c:url value="/assets/admin/mainjs.js" />"></script>
 
 	<!--Local Stuff-->
 	<script>

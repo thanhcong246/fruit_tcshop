@@ -15,7 +15,7 @@
 
 <!-- favicon -->
 <link rel="shortcut icon" type="image/png"
-	href="<c:url value="/assets/user/assets/img/favicon.png"/>">
+	href="<c:url value="/assets/user/assets/img/favicon-shop.png"/>">
 <!-- google font -->
 <link
 	href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700"

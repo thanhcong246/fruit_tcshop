@@ -45,7 +45,7 @@
 								<a href="#" class="cart-btn"><i class="fas fa-shopping-cart"></i>
 									Hết hàng</a>
 							</c:if>
-							<c:if test="${item.total_quality > 0 }">
+							<c:if test="${productDetail.total_quality > 0 }">
 								<a href="<c:url value="/AddCart/${productDetail.id }" />"
 									class="cart-btn"><i class="fas fa-shopping-cart"></i> Thêm
 									vào giỏ hàng</a>

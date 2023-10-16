@@ -4,6 +4,7 @@ import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import shop.Service.User.HomeServiceImpl;
@@ -18,8 +19,6 @@ public class BaseController {
 
 	@PostConstruct
 	public ModelAndView Init() {
-		_mvIndex.addObject("menus", _homeService.GetDataMenu());
-		_mvIndex.addObject("categorys", _homeService.GetDataCategorys());
 		return _mvIndex;
 	}
 }

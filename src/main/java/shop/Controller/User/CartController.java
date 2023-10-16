@@ -23,6 +23,8 @@ public class CartController extends BaseController {
 
 	@RequestMapping(value = { "/gio-hang" })
 	public ModelAndView IndexCart() {
+		_mvIndex.addObject("menus", _homeService.GetDataMenu());
+		_mvIndex.addObject("categorys", _homeService.GetDataCategorys());
 		_mvIndex.setViewName("user/cart/list-cart");
 		return _mvIndex;
 	}

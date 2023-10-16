@@ -18,7 +18,7 @@
 					<!-- logo -->
 					<div class="site-logo">
 						<a href='<c:url value="/" />'> <img
-							src="<c:url value="/assets/user/assets/img/logo.png" />" alt="">
+							src="<c:url value="/assets/user/assets/img/logo-shop.png" />" alt="">
 						</a>
 					</div>
 					<!-- logo -->
@@ -50,6 +50,10 @@
 								<li><a href='#'><i class="fas fa-user mr-1"></i>
 										${LoginInfo.display_name }</a>
 									<ul class="sub-menu">
+										<c:if test="${LoginInfo.active == 1 }">
+											<li><a href='<c:url value="/admin/" />'>Trang quản
+													trị admin</a></li>
+										</c:if>
 										<li><a href="#">Thông tin tài khoản</a></li>
 										<li><a href="<c:url value="/dang-xuat" />">Đăng xuất</a></li>
 									</ul></li>

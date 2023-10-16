@@ -8,8 +8,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
-<link rel="icon" type="image/png"
-	href="<c:url value="/assets/account/images/icons/favicon.ico" />" />
+<link rel="shortcut icon" type="image/png"
+	href="<c:url value="/assets/user/assets/img/favicon-shop.png"/>">
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css"
 	href="<c:url value="/assets/account/vendor/bootstrap/css/bootstrap.min.css" />">
@@ -46,7 +46,8 @@
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<div class="login100-pic js-tilt" data-tilt>
-					<img src="<c:url value="/assets/account/images/img-01.png" />"
+					<img class="rounded"
+						src="<c:url value="/assets/account/images/anh-login-account.png" />"
 						alt="IMG">
 				</div>
 

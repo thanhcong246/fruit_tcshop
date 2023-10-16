@@ -7,7 +7,7 @@
 	<div class="top-left">
 		<div class="navbar-header">
 			<a class="navbar-brand" href='<c:url value="/" />'><img
-				src='<c:url value="/assets/admin/images/logo.png" />' alt="Logo"></a>
+				src='<c:url value="/assets/user/assets/img/logo-shop.png" />' alt="Logo"></a>
 			<a class="navbar-brand hidden" href="./"><img
 				src="images/logo2.png" alt="Logo"></a> <a id="menuToggle"
 				class="menutoggle"><i class="fa fa-bars"></i></a>
