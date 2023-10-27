@@ -31,6 +31,12 @@
 	</div>
 
 	<div class="content">
+		<!-- phóng to hình ảnh -->
+		<div id="imageModal" class="modal">
+			<span class="close" onclick="closeModal()">&times;</span> <img
+				id="modalImage" class="modal-content" src="/path/to/placeholder.jpg">
+		</div>
+		<!-- ----------------- -->
 		<div class="row">
 			<div class="col-lg-6">
 				<div class="card">
@@ -40,12 +46,23 @@
 					<div class="card-body">
 						<!-- Credit Card -->
 						<div id="pay-invoice">
-							<form:form method="POST" action="create" novalidate="novalidate">
+							<form:form method="POST" action="#" novalidate="novalidate"
+								enctype="multipart/form-data">
 								<div class="form-group">
-									<label for="img" class="control-label mb-1">Ảnh</label> <input
-										id="img" name="img" type="text" class="form-control"
-										aria-required="true" aria-invalid="false"
-										value="${slide.img }">
+									<div class="row">
+										<div class="col-lg-6">
+											<h5>Ảnh cũ</h5>
+											<img alt="" height="150px"
+												src="<c:url value="/assets/uploads/slides/${slide.img }" />"
+												onclick="openModal('<c:url value="/assets/uploads/slides/${slide.img }" />')">
+										</div>
+										<div class="col-lg-6">
+											<label for="img" class="control-label mb-1">Chọn ảnh
+												mới</label> <input type="file" id="img" name="img"
+												class="form-control" accept="image/*" required>
+										</div>
+									</div>
+
 								</div>
 								<div class="form-group">
 									<label for="caption" class="control-label mb-1">Tiêu đề</label>

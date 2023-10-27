@@ -7,13 +7,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import shop.Dto.PaginatesDto;
-import shop.Service.User.CategoryServiceImpl;
+import shop.Service.User.CategoryServiceI;
 import shop.Service.User.PaginatesServiceImpl;
 
 @Controller
 public class CategoryController extends BaseController {
 	@Autowired
-	private CategoryServiceImpl categoryService;
+	private CategoryServiceI categoryService;
 
 	@Autowired
 	private PaginatesServiceImpl paginateService;

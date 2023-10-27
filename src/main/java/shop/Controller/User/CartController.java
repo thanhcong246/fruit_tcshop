@@ -12,14 +12,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import shop.Dto.CartDto;
-import shop.Service.User.BillsServiceImpl;
+import shop.Service.User.CartServiceI;
 import shop.Service.User.CartServiceImpl;
 
 @Controller
 public class CartController extends BaseController {
 
 	@Autowired
-	private CartServiceImpl cartService = new CartServiceImpl();
+	private CartServiceI cartService = new CartServiceImpl();
 
 	@RequestMapping(value = { "/gio-hang" })
 	public ModelAndView IndexCart() {

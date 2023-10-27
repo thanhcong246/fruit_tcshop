@@ -31,8 +31,8 @@ public class SlideDao extends BaseDao {
 	}
 
 	public void updateSlide(Slide slide) {
-		String sql = "UPDATE menu SET img = ?, caption = ?, content = ?, name = ?, url = ?, name2 = ?, url2 = ? WHERE id = ?";
-		_jdbcTemplate.update(sql, sql, slide.getImg(), slide.getCaption(), slide.getContent(), slide.getName(),
+		String sql = "UPDATE slide SET img = ?, caption = ?, content = ?, name = ?, url = ?, name2 = ?, url2 = ? WHERE id = ?";
+		_jdbcTemplate.update(sql, slide.getImg(), slide.getCaption(), slide.getContent(), slide.getName(),
 				slide.getUrl(), slide.getName2(), slide.getUrl2(), slide.getId());
 	}
 

@@ -5,8 +5,12 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
+import shop.Dto.ProductDto;
+import shop.Dto.ProductDtoMapper;
 import shop.Entity.Product;
 import shop.Entity.ProductMapper;
+import shop.Entity.Slide;
+import shop.Entity.SlideMapper;
 
 @Repository
 public class ProductDao extends BaseDao {
@@ -20,6 +24,40 @@ public class ProductDao extends BaseDao {
 		List<Product> listProducts = _jdbcTemplate.query(sql, new ProductMapper());
 		return listProducts;
 	}
+
+	/*---------------*/
+
+	public List<ProductDto> GetAllProductsDto() { // xử lý lấy sản phẩm và name cateogry
+		String sql = "SELECT products.*, categorys.name as name_category FROM products LEFT JOIN categorys ON products.id_category = categorys.id;";
+		List<ProductDto> listProducts = _jdbcTemplate.query(sql, new ProductDtoMapper());
+		return listProducts;
+	}
+
+	public void createProduct(Product product) {
+		String sql = "INSERT INTO products (img, id_category, name, old_price, price, sale, total_quality, title, highlight, new_product, details) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		_jdbcTemplate.update(sql, product.getImg(), product.getCategoryId(), product.getName(), product.getOld_price(),
+				product.getPrice(), product.getSale(), product.getTotal_quality(), product.getTitle(),
+				product.isHighlight(), product.isNewProduct(), product.getDetails());
+	}
+
+	public Product getProductById(int id) {
+		String sql = "SELECT * FROM products WHERE id = ?";
+		return _jdbcTemplate.queryForObject(sql, new Object[] { id }, new ProductMapper());
+	}
+
+	public void updateProduct(Product product) {
+		String sql = "UPDATE products SET img = ?, id_category = ?, name = ?, old_price = ?, price = ?, sale = ?, total_quality = ?, title = ?, highlight = ?, new_product = ?, details = ? WHERE id = ?";
+		_jdbcTemplate.update(sql, product.getImg(), product.getCategoryId(), product.getName(), product.getOld_price(),
+				product.getPrice(), product.getSale(), product.getTotal_quality(), product.getTitle(),
+				product.isHighlight(), product.isNewProduct(), product.getDetails(), product.getId());
+	}
+
+	public void deleteProductById(int id) {
+		String sql = "DELETE FROM products WHERE id = ?";
+		_jdbcTemplate.update(sql, id);
+	}
+
+	/*---------------*/
 
 	private String SqlProductsPaginate(int start, int totalPage) {
 		return "SELECT * FROM products LIMIT " + start + ", " + totalPage;
@@ -95,7 +133,7 @@ public class ProductDao extends BaseDao {
 		List<Product> listHightlightProducts = _jdbcTemplate.query(sql, new ProductMapper());
 		return listHightlightProducts;
 	}
-	
+
 	private String SqlProductByIdCart(long id) {// xử lý cart sp
 		return "SELECT * FROM products WHERE id = " + id + " LIMIT 1";
 	}

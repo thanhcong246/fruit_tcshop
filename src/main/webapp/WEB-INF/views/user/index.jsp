@@ -9,7 +9,7 @@
 		<!-- single home slider -->
 		<c:forEach var="item" items="${slides }">
 			<div class="single-homepage-slider"
-				style="background-image: url(<c:url value="/assets/user/assets/img/${item.img }" />)">
+				style="background-image: url(<c:url value="/assets/uploads/slides/${item.img }" />)">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12 col-lg-7 offset-lg-1 offset-xl-0">
@@ -18,8 +18,8 @@
 									<p class="subtitle">${item.caption }</p>
 									<h1>${item.content}</h1>
 									<div class="hero-btns">
-										<a href="${item.url }" class="boxed-btn">${item.name }</a> <a
-											href="${item.url2 }" class="bordered-btn">${item.name2 }</a>
+										<a href='<c:url value="${item.url }" />' class="boxed-btn">${item.name }</a>
+										<a href='<c:url value="${item.url2 }" />' class="bordered-btn">${item.name2 }</a>
 									</div>
 								</div>
 							</div>

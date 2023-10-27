@@ -14,13 +14,14 @@ import org.springframework.web.servlet.ModelAndView;
 
 import shop.Entity.Categorys;
 import shop.Entity.Menu;
+import shop.Service.Admin.CategoryServiceAdminI;
 import shop.Service.Admin.CategoryServiceAdminImpl;
 
 @Controller
 public class CategoryControllerAdmin extends BaseControllerAdmin {
 
 	@Autowired
-	CategoryServiceAdminImpl categoryService;
+	CategoryServiceAdminI categoryService;
 
 	@RequestMapping(value = { "/admin/category" })
 	public ModelAndView ListCategory() {

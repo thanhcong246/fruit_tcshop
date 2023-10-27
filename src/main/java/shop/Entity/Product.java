@@ -7,6 +7,7 @@ public class Product {
 	private int categoryId;
 	private String img;
 	private String name;
+	private double old_price;
 	private double price;
 	private int sale;
 	private String title;
@@ -50,6 +51,14 @@ public class Product {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public double getOld_price() {
+		return old_price;
+	}
+
+	public void setOld_price(double old_price) {
+		this.old_price = old_price;
 	}
 
 	public double getPrice() {

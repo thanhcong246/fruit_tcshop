@@ -18,9 +18,8 @@
 		<div class="animated fadeIn">
 			<div class="row">
 				<div class="col-lg-2">
-					<a href='<c:url value="/admin/slide/create" />'
-						id="payment-button" type="button"
-						class="btn btn-lg btn-info btn-block "> <span
+					<a href='<c:url value="/admin/slide/create" />' id="payment-button"
+						type="button" class="btn btn-lg btn-info btn-block "> <span
 						id="payment-button-amount">Thêm Slide</span>
 					</a>
 				</div>
@@ -49,9 +48,9 @@
 									<c:forEach var="item" items="${slides }">
 										<tr>
 											<td>${item.id }</td>
-											<td><img alt=""
-												src="<c:url value="/assets/uploads/${item.img }" />"
-												onclick="openModal('<c:url value="/assets/user/assets/img/${item.img }" />')">
+											<td><img alt="" height="50px"
+												src="<c:url value="/assets/uploads/slides/${item.img }" />"
+												onclick="openModal('<c:url value="/assets/uploads/slides/${item.img }" />')">
 											</td>
 											<td>${item.caption }</td>
 											<td>${item.content }</td>

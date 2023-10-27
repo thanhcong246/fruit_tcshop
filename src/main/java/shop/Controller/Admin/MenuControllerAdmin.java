@@ -13,13 +13,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import shop.Entity.Menu;
-import shop.Service.Admin.MenuServiceAdminImpl;
+import shop.Service.Admin.MenuServiceAdminI;
 
 @Controller
 public class MenuControllerAdmin extends BaseControllerAdmin {
 
 	@Autowired
-	MenuServiceAdminImpl menuService;
+	MenuServiceAdminI menuService;
 
 	@RequestMapping(value = { "/admin/menu" })
 	public ModelAndView ListMenu() {

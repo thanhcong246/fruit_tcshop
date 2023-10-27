@@ -9,7 +9,7 @@ import shop.Dao.ProductDao;
 import shop.Entity.Product;
 
 @Service
-public class CategoryServiceImpl implements CategoryI {
+public class CategoryServiceImpl implements CategoryServiceI {
 
 	@Autowired
 	private ProductDao productDao;

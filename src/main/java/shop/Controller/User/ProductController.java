@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import shop.Service.User.ProductServiceImpl;
+import shop.Service.User.ProductServiceI;
 
 @Controller
 public class ProductController extends BaseController {
 	@Autowired
-	private ProductServiceImpl _productService;
+	private ProductServiceI _productService;
 
 	// xử lý phần hiển thị thông tin sản phâm liên quan trong trang chi tiết sản
 	// phẩm

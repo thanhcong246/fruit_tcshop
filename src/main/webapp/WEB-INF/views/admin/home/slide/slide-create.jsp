@@ -40,7 +40,8 @@
 					<div class="card-body">
 						<!-- Credit Card -->
 						<div id="pay-invoice">
-							<form:form method="POST" action="create" novalidate="novalidate" enctype="multipart/form-data">
+							<form:form method="POST" action="create" novalidate="novalidate"
+								enctype="multipart/form-data">
 								<div class="form-group">
 									<label for="img" class="control-label mb-1">Ảnh</label> <input
 										type="file" id="img" name="img" class="form-control"
