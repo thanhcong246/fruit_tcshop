@@ -10,7 +10,7 @@ import shop.Entity.NewMapper;
 
 @Repository
 public class NewDao extends BaseDao {
-	
+
 	public List<New> GetDataNew() {
 		List<New> list = new ArrayList<New>();
 		String sql = "Select * from new";
@@ -19,9 +19,9 @@ public class NewDao extends BaseDao {
 	}
 
 	public void createNew(New news) {
-		String sql = "INSERT INTO new (img, name_user, title, description, tag, date) VALUES (?, ?, ?, ?, ?, ?)";
-		_jdbcTemplate.update(sql, news.getImg(), news.getName_user(), news.getTitle(), news.getDescription(),
-				news.getTag(), news.getDate());
+		String sql = "INSERT INTO new (img, name_user, title, content, description, tag, date) VALUES (?, ?, ?, ?, ?, ?, ?)";
+		_jdbcTemplate.update(sql, news.getImg(), news.getName_user(), news.getTitle(), news.getContent(),
+				news.getDescription(), news.getTag(), news.getDate());
 	}
 
 	public New getNewById(int id) {
@@ -30,9 +30,9 @@ public class NewDao extends BaseDao {
 	}
 
 	public void updateNew(New news) {
-		String sql = "UPDATE new SET img = ?, name_user = ?, title = ?, description = ?, tag = ?, date = ? WHERE id = ?";
-		_jdbcTemplate.update(sql, news.getImg(), news.getName_user(), news.getTitle(), news.getDescription(),
-				news.getTag(), news.getDate(), news.getId());
+		String sql = "UPDATE new SET img = ?, name_user = ?, title = ?, content=?, description = ?, tag = ?, date = ? WHERE id = ?";
+		_jdbcTemplate.update(sql, news.getImg(), news.getName_user(), news.getTitle(), news.getContent(),
+				news.getDescription(), news.getTag(), news.getDate(), news.getId());
 	}
 
 	public void deleteSlideById(int id) {

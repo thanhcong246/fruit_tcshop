@@ -55,6 +55,7 @@
 													trị admin</a></li>
 										</c:if>
 										<li><a href="#">Thông tin tài khoản</a></li>
+										<li><a href='<c:url value="/lich-su-mua-hang" />'>Lịch sử mua hàng</a></li>
 										<li><a href="<c:url value="/dang-xuat" />">Đăng xuất</a></li>
 									</ul></li>
 							</c:if>
@@ -65,7 +66,7 @@
 							<li>
 								<div class="header-icons">
 									<a class="shopping-cart" href='<c:url value="/gio-hang"/>'><i
-										class="fas fa-shopping-cart mr-1"></i> ${TotalQuantyCart }</a> <a
+										class="fas fa-shopping-cart mr-1"></i> <c:if test="${not empty Cart }">${TotalQuantyCart }</c:if> </a> <a
 										class="mobile-hide search-bar-icon" href="#"><i
 										class="fas fa-search"></i></a>
 								</div>

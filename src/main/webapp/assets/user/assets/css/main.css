@@ -1661,7 +1661,6 @@ p.excerpt {
 }
 
 .single-artcile-bg {
-  background-image: url(../img/latest-news/news-bg-3.jpg);
   height: 450px;
 }
 
@@ -2110,7 +2109,6 @@ a.video-play-btn {
 .shop-banner {
   position: relative;
   background-color: #f5f5f5;
-  background-image: url(../img/1.jpg);
   background-size: cover;
   padding: 110px 0px 115px;
 }

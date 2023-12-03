@@ -7,8 +7,8 @@
 	<div class="top-left">
 		<div class="navbar-header">
 			<a class="navbar-brand" href='<c:url value="/" />'><img
-				src='<c:url value="/assets/user/assets/img/logo-shop.png" />' alt="Logo"></a>
-			<a class="navbar-brand hidden" href="./"><img
+				src='<c:url value="/assets/user/assets/img/logo-shop.png" />'
+				alt="Logo"></a> <a class="navbar-brand hidden" href="./"><img
 				src="images/logo2.png" alt="Logo"></a> <a id="menuToggle"
 				class="menutoggle"><i class="fa fa-bars"></i></a>
 		</div>
@@ -104,11 +104,15 @@
 				</a>
 
 				<div class="user-menu dropdown-menu">
-					<a class="nav-link" href="#"><i class="fa fa- user"></i>My
-						Profile</a> <a class="nav-link" href="#"><i class="fa fa- user"></i>Notifications
-						<span class="count">13</span></a> <a class="nav-link" href="#"><i
-						class="fa fa -cog"></i>Settings</a> <a class="nav-link" href="#"><i
-						class="fa fa-power -off"></i>Logout</a>
+					<c:if test="${not empty LoginInfo}">
+						<a class="nav-link" href="#"><i class="fa fa -cog"></i>Cài đặt</a>
+						<a class="nav-link" href="<c:url value="/dang-xuat" />"><i class="fa fa-power -off"></i>Đăng
+							xuất</a>
+					</c:if>
+					<c:if test="${empty LoginInfo}">
+						<a class="nav-link" href='<c:url value="/account/dang-nhap" />'><i
+							class="fa fa-power -off"></i>Đăng nhập</a>
+					</c:if>
 				</div>
 			</div>
 

@@ -46,44 +46,44 @@
 		<div class="row">
 			<div class="col-lg-3 col-md-6">
 				<div class="footer-box about-widget">
-					<h2 class="widget-title">About us</h2>
-					<p>Ut enim ad minim veniam perspiciatis unde omnis iste natus
-						error sit voluptatem accusantium doloremque laudantium, totam rem
-						aperiam, eaque ipsa quae.</p>
+					<h2 class="widget-title">Về chúng tôi</h2>
+					<p>Chúng tôi cam kết sản phẩm ở trên là an toàn thực phẩm 100%.</p>
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-6">
 				<div class="footer-box get-in-touch">
-					<h2 class="widget-title">Get in Touch</h2>
+					<h2 class="widget-title">Địa chỉ</h2>
 					<ul>
-						<li>34/8, East Hukupara, Gifirtok, Sadan.</li>
-						<li>support@fruitkha.com</li>
-						<li>+00 111 222 3333</li>
+						<c:forEach var="item" items="${contacts }">
+							<li>${item.address }</li>
+							<li>${item.email }</li>
+							<li>+${item.phone }</li>
+						</c:forEach>
 					</ul>
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-6">
 				<div class="footer-box pages">
-					<h2 class="widget-title">Pages</h2>
+					<h2 class="widget-title">Trang chính</h2>
 					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="about.html">About</a></li>
-						<li><a href="services.html">Shop</a></li>
-						<li><a href="news.html">News</a></li>
-						<li><a href="contact.html">Contact</a></li>
+						<c:forEach var="item" items="${menus }">
+							<li><a href='<c:url value="${item.url }"/>'>${item.name }</a></li>
+						</c:forEach>
 					</ul>
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-6">
 				<div class="footer-box subscribe">
-					<h2 class="widget-title">Subscribe</h2>
-					<p>Subscribe to our mailing list to get the latest updates.</p>
-					<form action="index.html">
-						<input type="email" placeholder="Email">
-						<button type="submit">
-							<i class="fas fa-paper-plane"></i>
-						</button>
-					</form>
+					<h2 class="widget-title">Đăng kí</h2>
+					<p>Đăng kí tài khoản để nhận những thông tin mới nhất.</p>
+					<c:if test="${empty LoginInfo}">
+						<form action="<c:url value="/account/dang-ky"/>">
+							<input type="email" placeholder="Email">
+							<button type="submit">
+								<i class="fas fa-paper-plane"></i>
+							</button>
+						</form>
+					</c:if>
 				</div>
 			</div>
 		</div>

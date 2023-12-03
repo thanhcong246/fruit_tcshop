@@ -23,7 +23,7 @@
 	<div class="cart-section mt-150 mb-150">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-8 col-md-12">
+				<div class="col-lg-12 col-md-12">
 					<div class="cart-table-wrap">
 						<table class="cart-table">
 							<thead class="cart-table-head">
@@ -45,7 +45,7 @@
 											href='<c:url value="/DeleteCart/${item.key }" />'
 											type="button"><i class="far fa-window-close"></i></a></td>
 										<td class="product-image"><img
-											src="<c:url value="/assets/user/assets/img/products/${item.value.product.img }" />"
+											src="<c:url value="/assets/uploads/products/${item.value.product.img }" />"
 											alt=""></td>
 										<td class="product-name">${item.value.product.name }</td>
 										<td class="product-price"><fmt:formatNumber type="number"
@@ -68,50 +68,15 @@
 					</div>
 				</div>
 
-				<div class="col-lg-4">
-					<div class="total-section">
-						<table class="total-table">
-							<thead class="total-table-head">
-								<tr class="table-total-row">
-									<th>Tổng cộng</th>
-									<th>Giá</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr class="total-data">
-									<td><strong>Tổng sản phẩm: </strong></td>
-									<td><fmt:formatNumber type="number" groupingUsed="true"
-											value="${TotalPriceCart }" />₫</td>
-								</tr>
-								<tr class="total-data">
-									<td><strong>Phí Ship: </strong></td>
-									<td>$45</td>
-								</tr>
-								<tr class="total-data">
-									<td><strong>Tổng: </strong></td>
-									<td>$545</td>
-								</tr>
-							</tbody>
-						</table>
-						<div class="cart-buttons">
-							<a href='<c:url value="/san-pham" />' class="boxed-btn">Quay
-								về</a> <a href="checkout.html" class="boxed-btn black">Thanh
-								toán</a>
-						</div>
-					</div>
+				<div class="offset-md-9">
 
-					<div class="coupon-section">
-						<h3>Mã giảm giá</h3>
-						<div class="coupon-form-wrap">
-							<form action="index.html">
-								<p>
-									<input type="text" placeholder="...">
-								</p>
-								<p>
-									<input type="submit" value="Áp dụng">
-								</p>
-							</form>
-						</div>
+					<div class="cart-buttons">
+						<a href='<c:url value="/san-pham" />' class="boxed-btn">Quay
+							về</a>
+						<c:if test="${not empty Cart }">
+							<a href='<c:url value="/checkout" />' class="boxed-btn black">Thanh
+								toán</a>
+						</c:if>
 					</div>
 				</div>
 			</div>

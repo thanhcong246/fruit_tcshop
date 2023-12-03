@@ -36,6 +36,7 @@
 										<th>Ảnh</th>
 										<th>Tên người đăng</th>
 										<th>Tiêu đề</th>
+										<th>Nội dung</th>
 										<th>Mô tả</th>
 										<th>Tag</th>
 										<th>Ngày tạo</th>
@@ -53,6 +54,7 @@
 											</td>
 											<td>${item.name_user }</td>
 											<td>${item.title }</td>
+											<td><c:out value="${item.content}" /></td>
 											<td><c:out value="${item.description}" /></td>
 											<td>${item.tag }</td>
 											<td>${item.date }</td>

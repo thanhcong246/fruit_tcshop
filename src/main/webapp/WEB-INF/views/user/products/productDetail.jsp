@@ -26,7 +26,7 @@
 				<div class="col-md-5">
 					<div class="single-product-img">
 						<img
-							src='<c:url value="/assets/user/assets/img/products/${productDetail.img }" />'
+							src='<c:url value="/assets/uploads/products/${productDetail.img }" />'
 							alt="">
 					</div>
 				</div>
@@ -88,7 +88,7 @@
 							<div class="product-image">
 								<a
 									href="<c:url value="/san-pham/chi-tiet-san-pham/${item.id }" />"><img
-									src="<c:url value="/assets/user/assets/img/products/${item.img }" />"
+									src="<c:url value="/assets/uploads/products/${item.img }" />"
 									alt=""></a>
 							</div>
 							<h3>${item.name }</h3>

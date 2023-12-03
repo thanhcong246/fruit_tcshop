@@ -45,8 +45,8 @@ public class NewControllerAdmin extends BaseControllerAdmin {
 
 	@PostMapping("/admin/new/create")
 	public String createNew(@RequestParam("img") MultipartFile imgFile, @RequestParam String name_user,
-			@RequestParam String title, @RequestParam String description, @RequestParam String tag,
-			@RequestParam Date date, HttpServletRequest request) {
+			@RequestParam String title, @RequestParam String content, @RequestParam String description,
+			@RequestParam String tag, @RequestParam Date date, HttpServletRequest request) {
 		if (!imgFile.isEmpty()) {
 			// Tạo tên duy nhất cho ảnh
 			String originalFileName = imgFile.getOriginalFilename();
@@ -74,6 +74,7 @@ public class NewControllerAdmin extends BaseControllerAdmin {
 				news.setImg(uniqueFileName);
 				news.setName_user(name_user);
 				news.setTitle(title);
+				news.setContent(content);
 				news.setDescription(description);
 				news.setTag(tag);
 				news.setDate(date);
@@ -98,8 +99,8 @@ public class NewControllerAdmin extends BaseControllerAdmin {
 	// Lưu thay đổi vào database khi chỉnh sửa
 	@PostMapping("/admin/new/edit/{id}")
 	public String editSlide(@PathVariable int id, @RequestParam("img") MultipartFile imgFile,
-			@RequestParam String name_user, @RequestParam String title, @RequestParam String description,
-			@RequestParam String tag, @RequestParam Date date) {
+			@RequestParam String name_user, @RequestParam String title, @RequestParam String content,
+			@RequestParam String description, @RequestParam String tag, @RequestParam Date date) {
 		New news = newService.getNewById(id);
 		if (news != null) {
 			if (!imgFile.isEmpty()) {
@@ -132,6 +133,7 @@ public class NewControllerAdmin extends BaseControllerAdmin {
 
 			news.setName_user(name_user);
 			news.setTitle(title);
+			news.setContent(content);
 			news.setDescription(description);
 			news.setTag(tag);
 			news.setDate(date);

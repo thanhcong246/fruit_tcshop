@@ -72,6 +72,13 @@
 								</div>
 
 								<div class="form-group">
+									<label for="content" class="control-label mb-1">Nội
+										dung</label>
+									<textarea id="content" name="content" class="form-control"
+										aria-required="true" aria-invalid="false">${news.content }</textarea>
+								</div>
+
+								<div class="form-group">
 									<label for="tag" class="control-label mb-1">Tag</label> <input
 										id="tag" name="tag" type="text" class="form-control"
 										aria-required="true" aria-invalid="false" value="${news.tag }">
@@ -122,6 +129,7 @@
 	<script src="<c:url value="/assets/ckeditor/ckeditor.js" />"></script>
 	<script>
 		CKEDITOR.replace('description');
+		CKEDITOR.replace('content');
 	</script>
 
 </body>

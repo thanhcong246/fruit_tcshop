@@ -1,8 +1,13 @@
 package shop.Dao;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Repository;
 
+import shop.Entity.Categorys;
+import shop.Entity.CategorysMapper;
 import shop.Entity.Users;
 import shop.Entity.UsersMapper;
 
@@ -37,5 +42,33 @@ public class UsersDao extends BaseDao {
 		} catch (EmptyResultDataAccessException e) {
 			return null; // Email không tồn tại
 		}
+	}
+
+	public List<Users> GetDataAccount() {
+		List<Users> list = new ArrayList<Users>();
+		String sql = "select * from users";
+		list = _jdbcTemplate.query(sql, new UsersMapper());
+		return list;
+	}
+
+	public void createAccount(Users users) {
+		String sql = "INSERT INTO users (user, password, display_name, address, active) VALUES (?, ?, ?, ?, ?)";
+		_jdbcTemplate.update(sql, users.getUser(), users.getPassword(), users.getDisplay_name(), users.getAddress(),
+				users.getActive());
+	}
+
+	public Users getAccountById(int id) {
+		String sql = "SELECT * FROM users WHERE id = ?";
+		return _jdbcTemplate.queryForObject(sql, new Object[] { id }, new UsersMapper());
+	}
+
+	public void updateAccount(Users users) {
+		String sql = "UPDATE users SET active = ? WHERE id = ?";
+		_jdbcTemplate.update(sql, users.getActive(), users.getId());
+	}
+
+	public void deleteAccountById(int id) {
+		String sql = "DELETE FROM users WHERE id = ?";
+		_jdbcTemplate.update(sql, id);
 	}
 }

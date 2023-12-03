@@ -14,6 +14,7 @@ public class NewMapper implements RowMapper<New> {
 		news.setImg(rs.getString("img"));
 		news.setName_user(rs.getString("name_user"));
 		news.setTitle(rs.getString("title"));
+		news.setContent(rs.getString("content"));
 		news.setDescription(rs.getString("description"));
 		news.setTag(rs.getString("tag"));
 		news.setDate(rs.getDate("date"));

@@ -33,6 +33,8 @@
 
 						<li><i class="fa fa-bars" aria-hidden="true"></i><a
 							href='<c:url value="/admin/product" />'>Sản phẩm</a></li>
+						<li><i class="fa fa-bars" aria-hidden="true"></i><a
+							href='<c:url value="/admin/history" />'>Lịch sử mua hàng</a></li>
 					</ul></li>
 
 				<li class="menu-item-has-children dropdown"><a href="#"
@@ -48,11 +50,37 @@
 
 				<li class="menu-item-has-children dropdown"><a href="#"
 					class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-					aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Thông tin liên hệ
+					aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Thông
+						tin liên hệ
 				</a>
 					<ul class="sub-menu children dropdown-menu">
 						<li><i class="fa fa-bars" aria-hidden="true"></i><a
 							href='<c:url value="/admin/contact" />'>Liên hệ</a></li>
+
+					</ul></li>
+
+				<li class="menu-item-has-children dropdown"><a href="#"
+					class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>About
+						TcShop
+				</a>
+					<ul class="sub-menu children dropdown-menu">
+						<li><i class="fa fa-bars" aria-hidden="true"></i><a
+							href='<c:url value="/admin/ourteam" />'>Đội ngũ</a></li>
+						<li><i class="fa fa-bars" aria-hidden="true"></i><a
+							href='<c:url value="/admin/support" />'>Hỗ trợ</a></li>
+						<li><i class="fa fa-bars" aria-hidden="true"></i><a
+							href='<c:url value="/admin/about" />'>About</a></li>
+					</ul></li>
+
+				<li class="menu-item-has-children dropdown"><a href="#"
+					class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Quản
+						lý
+				</a>
+					<ul class="sub-menu children dropdown-menu">
+						<li><i class="fa fa-bars" aria-hidden="true"></i><a
+							href='<c:url value="/admin/account" />'>Tài khoản người dùng</a></li>
 
 					</ul></li>
 

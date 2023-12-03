@@ -7,11 +7,20 @@ public class New {
 	private String img;
 	private String name_user;
 	private String title;
+	private String content;
 	private String description;
 	private String tag;
 	private Date date;
 
 	public New() {
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
 	}
 
 	public int getId() {

@@ -50,12 +50,20 @@
 								</div>
 
 								<input id="name_user" name="name_user" type="hidden"
-									aria-required="true" aria-invalid="false" value="${LoginInfo.display_name }">
+									aria-required="true" aria-invalid="false"
+									value="${LoginInfo.display_name }">
 
 								<div class="form-group">
 									<label for="title" class="control-label mb-1">Tiêu đề</label> <input
 										id="title" name="title" type="text" class="form-control"
 										aria-required="true" aria-invalid="false">
+								</div>
+
+								<div class="form-group">
+									<label for="content" class="control-label mb-1">Nội
+										dung</label>
+									<textarea id="content" name="content" class="form-control"
+										aria-required="true" aria-invalid="false"></textarea>
 								</div>
 
 								<div class="form-group">
@@ -108,6 +116,7 @@
 	<script src="<c:url value="/assets/ckeditor/ckeditor.js" />"></script>
 	<script>
 		CKEDITOR.replace('description');
+		CKEDITOR.replace('content');
 	</script>
 
 </body>
